@@ -1,0 +1,64 @@
+node:
+      定义：node是一个基于v8引擎的JavaScript运行环境
+	v8引擎  高性能的服务器
+	JavaScript
+      特点：单线程   非阻塞I/O  事件驱动(事件循环，回调函数)
+      
+      node是单线程 但是并发性强 高性能 ==》非阻塞I/O  事件驱动
+
+      node的应用：用户表单收集   考试系统   聊天室   图文直播   提供JSON的API（为前提Angular使用）
+
+线程和进程：
+      进程：是并发执行的程序在执行过程中分配和管理资源的基本单位，是一个动态概念，竞争计算机系统资源的基本单位。
+      线程：是进程的一个执行单元，是进程内科调度实体。比进程更小的独立运行的基本单位。线程也被称为轻量级进程。
+      一个程序至少一个进程，一个进程至少一个线程。
+
+win+r  输入cmd
+node -v 查看node版本
+切换盘符：    d:     c:    e:    f:
+返回上级目录:  cd..
+清屏:  cls
+结束当前运行:  ctrl+c
+
+
+1.cd  进入文件夹    node 文件名称     
+2.node+首字母+Tab
+3.在路径下直接输入cmd    直接拖    node文件名称
+
+形参：通过一个变量接收具有实际意义的值（可更改）
+实参：具有实际意义的值（不可更改）
+
+req：url 请求的路径
+url模块：
+	parse 解析：字符串 对象 需要多传入一个参数true
+		query 接收get请求发送过来的值
+	resolve	解析路径并进行拼接   两个参数  把后一个参数拼接在域名上
+	format	解析对象	把对象转换为字符串输出
+	
+结束响应： res.end()   参数为字符串类型
+监听端口：listen()    两个参数  第一个为端口  第二个为回调函数
+解决乱码： res.writeHead(状态码,{"文本类型":"text/html;编码 charset=utf-8"})
+	 text/palin  文本	text/css  css	images/png  图片
+
+FS模块：
+      文件	flie
+	{"flag":"a"}
+	a : sppend
+	r : read
+	w : write
+      目录	dir
+	mkdir	rmdir	rename
+	stat   判断文件的状态   stats   isFile()   isDirectory()
+	暴露   module.exprots
+	抛出   exports
+	作用:把文件抛出，从而使得可以让另一个文件使用
+	使用：require()
+
+	module.exports 和 exports 和 export 和 export default   requier   import ？
+	node采用的模块机制  有多个模块拼接而成	common.js 模块化机制
+	node:	module.exports	exports 	requier   
+	es6:	export 	export default	import
+
+	module.exports 和 exports的区别？
+		exports是module.exports的引用（值）	exports=module.exports
+		module.exports 和 exports都是一个空对象，占用同一块内存
